@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <% include ../partials/head %>
+</head>
+
+<body class="container">
+    <header>
+        <% include ../partials/header-loggedin %>
+    </header>
+    <main>
+        <aside class="panel panel-default col-md-8 pull-right col-sm-12 col-xs-12">
+            <form action="/activity" method="post" class="panel-body">
+                <div class="form-group">
+                    <label for="type">Type</label>
+                    <input type="text" class="form-control" id="type" name="type" placeholder="Enter Activity Type">
+                </div>
+                <div class="form-group">
+                    <label for="location">Location</label>
+                    <input type="text" class="form-control" id="location" name="location" placeholder="Enter Activity Location">
+                </div>
+                <div class="form-group">
+                    <label for="distance">Distance</label>
+                    <input type="text" class="form-control" id="distance" name="distance" placeholder="Enter Distance">
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </aside>
+        <div class="col-md-4">
+            <img class="img-responsive center-block" src="/images/activity.jpg" alt="...">
+        </div>
+    </main>
+</body>
+
+</html>

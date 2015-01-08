@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <% include ../partials/head %>
+</head>
+
+<body class="container">
+    <header>
+        <% include ../partials/header-loggedin %>
+    </header>
+    <main>
+        <% if(activities.length> 0){%>
+            <h3> Welcome
+            <%=user.firstname %>
+        </h3>
+            <table class="table table-striped">
+                <thead>
+                    <tr class="h4">
+                        <td>#</td>
+                        <td>Type</td>
+                        <td>Location</td>
+                        <td>Distance</td>
+                    </tr>
+
+                </thead>
+                <tbody>
+                    <% for(var i=0; i < activities.length; i++) { %>
+                        <tr>
+                            <td>
+                                <%=i +1 %>
+                            </td>
+                            <td>
+                                <%=activities[i].type %>
+                            </td>
+                            <td>
+                                <%=activities[i].location %>
+                            </td>
+                            <td>
+                                <%=activities[i].distance %>
+                            </td>
+                        </tr>
+                        <% } %>
+                </tbody>
+            </table>
+            <% } else{ %>
+                <div class="jumbotron">
+                    <div class="container">
+                        <div class="col-md-4 col-sm-12 col-xs-12 text-center">
+                            <h3> Welcome<%=user.firstname %></h3>
+                            <p>No activities yet</p>
+                            <p><a class="btn btn-primary btn-lg" href="/activity" role="button">add activity</a>
+                            </p>
+                        </div>
+                        <div class="col-md-6 pull-right">
+                            <img class="img-responsive center-block" src="/images/activity.jpg" alt="...">
+                        </div>
+                    </div>
+                </div>
+                <% } %>
+
+    </main>
+</body>
+
+</html>
