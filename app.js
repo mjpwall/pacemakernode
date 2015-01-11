@@ -6,8 +6,9 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var mongoose   = require('mongoose');
 var connection = require('./connection');
+var cors = require('cors')
 var app = express();
-
+app.use(cors());
 mongoose.connect(connection.getCon());
 
 // view engine setup

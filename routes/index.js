@@ -65,6 +65,7 @@ module.exports = function(passport) {
             activities = activity;
             res.render('pages/dashboard', {
             title: 'PaceMaker',
+            pageName: 'dashboard',
             user: req.user,
             activities: activities
         });
@@ -76,6 +77,7 @@ module.exports = function(passport) {
     router.get('/activity', isAuthenticated, function(req, res) {
         res.render('pages/activity', {
             title: 'PaceMaker',
+            pageName: 'activity',
             user: req.user
         });
     });

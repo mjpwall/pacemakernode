@@ -83,9 +83,9 @@ describe('testing api', function() {
     });
 
     it('renders can access activities once logged in', function(done) {
-        supertest(app).get('/api/activities')
-        .expect('Content-Type', 'application/json; charset=utf-8')
-            .expect(200, done);
+        agent.get('/api/activities')
+            .expect('Content-Type', 'application/json; charset=utf-8')
+            .expect(/distance/,done);
     });
 
 

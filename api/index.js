@@ -68,20 +68,7 @@ module.exports = function(passport) {
 
     });
 
-    /* GET activities */
-    router.get('/activities', isAuthenticated, function(req, res) {
-        Activity.find({
-            user: req.user
-        }, function(err, activity) {
-            if (err) return next(err);
-            res.json({
-                activities: activity,
-                user: req.user
-            });
-        });
-    });
-
-    /* create activiyty */
+     /* create activiyty */
 
     router.post('/activity', isAuthenticated, function(req, res) {
         // create a new instance of the Activity model
@@ -100,6 +87,20 @@ module.exports = function(passport) {
             res.json({
                 message: 'new activity saved'
             })
+        });
+    });
+
+    /* GET activities */
+    router.get('/activities', isAuthenticated, function(req, res) {
+        Activity.find({
+            user: req.user
+        }, function(err, activity) {
+            
+            if (err) return next(err);
+            res.json({
+                'activities' : activity,
+                user : req.user
+            });
         });
     });
 
